@@ -1,5 +1,7 @@
 FROM docker.io/library/gcc:11.2.0 as builder
 
+LABEL org.opencontainers.image.source https://github.com/sai-lab/sprofiler-containers
+
 WORKDIR /src
 COPY . .
 RUN gcc main.c -o hello

@@ -12,6 +12,11 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        image:
+          - hello-c
+          - hello-go
     steps:
       - uses: actions/checkout@v2
       - name: Set up QEMU
@@ -28,5 +33,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: ./hello-c
-          tags: ghcr.io/sai-lab/hello-c:latest
+          context: ${{ matrix.image }}
+          tags: ghcr.io/sai-lab/${{ matrix.image }}:latest
