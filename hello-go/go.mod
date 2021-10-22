@@ -1,3 +1,3 @@
-module github.com/guni1192/sprofiler-demo-app
+module github.com/sai-lab/sprofiler-contaners/hello-go
 
-go 1.15
+go 1.17
